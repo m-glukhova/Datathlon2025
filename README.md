@@ -5,9 +5,6 @@ import statsmodels.api as sm
 file_path = r"C:\Python files\advertising_dataset.xlsx"
 df = pd.read_excel(file_path)
 
-X = df[['digital_advertising', 'traditional_advertising']]
-Y = df['return_advertising_campaign']
-
 X = sm.add_constant(X)
 
 model = sm.OLS(Y, X).fit()
